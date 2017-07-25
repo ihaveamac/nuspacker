@@ -18,7 +18,8 @@ import com.tim.nuspacker.utils.HashUtil;
 public class FSTEntry implements IHasData,Cloneable{
     public enum Types{
         DIR((byte)0x01),
-        notInNUS((byte)0x80);
+        notInNUS((byte)0x80),
+        WiiVC((byte)0x02);
         private final byte type;
         Types(byte type) { this.type = type; }
         public byte getValue() { return type; }
@@ -294,6 +295,7 @@ public class FSTEntry implements IHasData,Cloneable{
         byte type = 0;
         if(isDir()) type |= Types.DIR.getValue();
         if(isNotInPackage()) type |= Types.notInNUS.getValue();
+        if(getFilename().endsWith("nfs")) type |= Types.WiiVC.getValue();
         return type;
     }
     
