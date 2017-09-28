@@ -21,12 +21,10 @@ import com.tim.nuspacker.utils.XMLParser;
 public class Starter {
     
     public static void main (String args[]){
-        System.out.print("NUSPacker 0.3-i");
+        System.out.print("NUSPacker 0.5");
         new CompileDate().printDate();
         System.out.println();
         System.out.println();
-        
-   
         
         new File(Settings.tmpDir).mkdir();
         

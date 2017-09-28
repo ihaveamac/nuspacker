@@ -150,15 +150,21 @@ public class ContentRules {
         /*00000009*/ rules.createNewRule("/code/.*(.rpx|.rpl)",common_details_code,true); // Each file has it own content file
         
         //Don't forget the preload.txt
-        ContentDetails common_details_preload =  new ContentDetails(true, Settings.GROUPID_CODE, 0x0L, Settings.FSTFLAGS_CODE);// // hashed, groupID 0x400, parentid empty, fstentry flags
+        ContentDetails common_details_preload =  new ContentDetails(true, Settings.GROUPID_CODE, 0x0L, Settings.FSTFLAGS_CODE);// // hashed, groupID 0x400, parentid empty, fstentry flags   
         /*000000??*/ rules.createNewRule("/code/preload.txt",common_details_preload); // Each file has it own content file
-
+        
         /*000000??*/ rules.createNewRule("/code/fw.img",common_details_code);
         /*000000??*/ rules.createNewRule("/code/fw.tmd",common_details_code);
         /*000000??*/ rules.createNewRule("/code/htk.bin",common_details_code);
         ///*000000??*/ rules.createNewRule("/code/nn_hai_user.rpl",common_details_code);
         /*000000??*/ rules.createNewRule("/code/rvlt.tik",common_details_code);
         /*000000??*/ rules.createNewRule("/code/rvlt.tmd",common_details_code);
+        
+        /*000000??*/ rules.createNewRule("/code/boot.bin",common_details_code);
+        /*000000??*/ rules.createNewRule("/code/c2w.img",common_details_code);
+        /*000000??*/ rules.createNewRule("/code/deint.txt",common_details_code);
+        /*000000??*/ rules.createNewRule("/code/dmcu.d.hex",common_details_code);
+        /*000000??*/ rules.createNewRule("/code/font.bin",common_details_code);
         
         //And finally the content
         ContentDetails common_details_content =  new ContentDetails(true, contentGroup, titleID, Settings.FSTFLAGS_CONTENT);// // hashed, groupID part of titleid, parentid own titleid, fstentry flags
